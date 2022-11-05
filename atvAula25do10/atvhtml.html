@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">      
+        <title>Calcular Média aritmetica</title>
+        <style>
+            .artigo{
+                background-color: rgb(252, 203, 129);
+                color: rgb(80, 20, 20);
+                box-shadow: 2px 2px 2px rgb(95, 43, 27);
+                margin: 20px;
+                padding: 20px;
+                border-radius: 6px;  
+            }
+        </style>
+        <script type="text/javascript">
+               function calculaMedia(nota1, nota2, peso1, peso2) {
+                   var media = 0;
+                   media = (parseFloat(nota1*peso1) + parseFloat(nota2*peso2)) / (parseFloat(peso1) + parseFloat(peso2)); 
+                   return media;
+               }//Calcula a media aritmetica ponderada a partir das notas e pesos fornecidos
+               
+               function limpaCampo(campo) {
+                    if(campo == 1) {
+                        document.form.nota1.value ="";    // pega o elemento nota 1 pelo formulário
+                    }
+                    if(campo == 2) {
+                        document.getElementById("nota2").value= "";    // podemos pegar o elemento pelo ID dele também
+                    }
+                    if(campo == 3) {
+                        document.getElementById("peso1").value= ""; 
+                   }
+                    if(campo == 4) {
+                        document.getElementById("peso2").value = "";
+                   }                
+               }//Limpa o campo caso o usuario clique no espaço a ser preenchido
+
+                //O enunciado pedia uma nova funçao p calcular media aritmetica e como ja tinha a ponderada criei uma simples abaixo
+               function mediasimples(nota1, nota2) {
+                    var media_sim = 0;
+                    media_sim = (parseFloat(nota1) + parseFloat(nota2)) / 2;
+                    return media_sim;
+                }//calcula media aritmetica simples
+         </script>
+   </head>
+   <body style="background-color: rgb(253, 230, 180);">
+    <article class="artigo">
+        <p class=”titulo”>CALCULA MÉDIA</p>
+       <form name="form">
+            <p>Nota 1: <input  type="text" size="20" id="nota1" value="Digite nota 1" onfocus="limpaCampo(1);" required></p>
+            <p>Nota 2: <input  type="text" size="20" id="nota2" value="Digite nota 2" onfocus="limpaCampo(2);"> </p>
+            <p>Peso Nota 1: <input  type="text" size="20" id="peso1" value="Digite peso prova 1" onfocus="limpaCampo(3);"> </p>
+            <p>Peso Nota 2: <input  type="text" size="20" id="peso2" value="Digite peso prova 2" onfocus="limpaCampo(4);"> </p>
+            <input  type="button" value="media ponderada" onclick="this.form.medfin.value =calculaMedia(this.form.nota1.value,this.form.nota2.value,this.form.peso1.value,this.form.peso2.value); media6()" >
+            <input  type="button" value="media simples" onclick="this.form.medfin.value =mediasimples(this.form.nota1.value,this.form.nota2.value); media6()" >
+            <p>Media Final : <input type="text" id="medfin" size="20" ></p>
+            <p id="aprov"></p>
+
+            <script>
+                function media6() {
+                    //pegando o valor fornecido para media
+                    let x = document.getElementById("medfin").value;
+                    let texto;
+                    if (x >= 6) {
+                        texto = "Aprovado.";
+                    } else {
+                        texto = "Reprovado.";
+                    }
+                    document.getElementById("aprov").innerHTML = texto;
+                }//Valida se a media é maior ou igual a 6
+            </script>
+       </form>
+    </article>
+        
+    </body>
+</html>
