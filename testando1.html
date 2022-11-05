@@ -1,0 +1,47 @@
+<!-- Utilizando os conceitos aprendidos até agora, resolva o exercício:
+Construa um script em JavaScript que permita o usuário introduzir:
+• Nome;
+• Idade;
+• Gasto diário com locomoção: (em R$);
+• Tempo semanal de estudo extraclasse (em h);
+• Tempo semanal livre (em h);
+• Mostre seus dados; e
+• Relação do tempo livre com o tempo total: tempo livre*100/(tempo livre +
+tempo estudo)
+E apresente numa página HTML -->
+<!doctype html>
+<html>
+	<head>
+		<title>CalcJS</title>
+		<meta charset="utf-8">
+		<style>
+			p{
+				background-color: cornsilk;
+			}
+		</style>
+	</head>
+	<body>
+	    <h1>Dados passados pelo usuário</h1>
+		<p id="lugar"></p>
+		<script>
+			var nome, idade, gasto, tlive, textra, razao;
+			nome=prompt("Escreva seu nome:");
+			idade=parseInt(prompt("Escreva sua idade:"));
+			gasto=parseFloat(prompt("Escreva gasto diário em locomoção (R$):"));
+			textra=parseFloat(prompt("Escreva tempo semana de estudo extraclasse (h):"));
+			tlivre=parseFloat(prompt("Escreva tempo semana livre (h):"));
+			razao=tlivre*100/(tlivre+textra);
+			
+			var onde=document.getElementById("lugar");
+			nome='sapo';
+			onde.innerHTML="<p>Nome: "+nome+"</p>";
+			onde.innerHTML+="<p>Idade: "+idade+"</p>";
+			onde.innerHTML+="<p>Gasto diário em locomoção: R$"+gasto.toFixed(2)+"</p>";
+			onde.innerHTML+="<p>Tempo semanal de estudo extraclasse: "+textra+"h</p>";
+			onde.innerHTML+="<p>Tempo semanal livre: "+tlivre+"h</p>";
+			onde.innerHTML+="<p>Relação do tempo livre com o tempo total: "+razao+"</p>";
+			
+			
+		</script>
+	</body>
+</html>
