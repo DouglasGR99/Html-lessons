@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(214, 214, 214);
+}
+
+.caixas {
+    background-color: white;
+    box-shadow: 2px 2px 2px rgb(61, 61, 61);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.diferentes {
+    background-color: rgb(132, 185, 230);
+}
