@@ -8,11 +8,27 @@
 <body>
     <header class="caixas">
         <!--Titulo do site-->
-        <h1>Bonnanotte douglinas</h1>
+        <h1>Buona notte douglinas</h1>
         <!--barra de navegação-->
         <nav>
             <a href="parteHtml.html" class="botaoBonito azinho">Voltar a pagina 1</a>
         </nav>
     </header>
+    <main class="caixas">
+        <article >
+            <p>CALCULA MÉDIA</p>
+           <form name="form">
+                <p>Nota 1: <input  type="text" size="20" id="nota1" value="Digite nota 1" onfocus="limpaCampo(1);" required></p>
+                <p>Nota 2: <input  type="text" size="20" id="nota2" value="Digite nota 2" onfocus="limpaCampo(2);"> </p>
+                <p>Peso Nota 1: <input  type="text" size="20" id="peso1" value="Digite peso prova 1" onfocus="limpaCampo(3);"> </p>
+                <p>Peso Nota 2: <input  type="text" size="20" id="peso2" value="Digite peso prova 2" onfocus="limpaCampo(4);"> </p>
+                <input  type="button" value="media ponderada" onclick="this.form.medfin.value =calculaMedia(this.form.nota1.value,this.form.nota2.value,this.form.peso1.value,this.form.peso2.value); media6()" >
+                <input  type="button" value="media simples" onclick="this.form.medfin.value =mediasimples(this.form.nota1.value,this.form.nota2.value); media6()" >
+                <p>Media Final : <input type="text" id="medfin" size="20" ></p>
+                <p id="aprov"></p>
+                <p id="medfin"></p>
+           </form>
+        </article>
+    </main>
 </body>
 </html>
