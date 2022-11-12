@@ -48,7 +48,10 @@ function limpaCampo(campo) {
     }
      if(campo == 4) {
          document.getElementById("peso2").value = "";
-    }                
+    }
+    if(campo == 5) {
+        document.getElementById("buscado").value = "";
+    }            
 }//Limpa o campo caso o usuario clique no espaço a ser preenchido
 
  //O enunciado pedia uma nova funçao p calcular media aritmetica e como ja tinha a ponderada criei uma simples abaixo
@@ -69,3 +72,10 @@ function mediasimples(nota1, nota2) {
     }
     document.getElementById("aprov").innerHTML = texto;
 }//Valida se a media é maior ou igual a 6
+
+//buscar o valor dentro da array
+function buscar() {
+    let posi = document.getElementById("buscado").value;
+    const animais = ["abelha", "barata", "cavalo", "dalmata"];
+    document.getElementById("retornado").innerHTML = "<p>"+animais[posi]+"<p>";
+}
